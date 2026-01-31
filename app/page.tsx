@@ -18,8 +18,6 @@ import {
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Navigation */}
-
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-4">

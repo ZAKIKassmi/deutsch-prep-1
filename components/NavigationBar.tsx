@@ -71,11 +71,13 @@ export default function NavigationBar() {
                 <SheetTitle>Menu</SheetTitle>
               </SheetHeader>
 
-              <div className="mt-8 flex flex-col gap-4">
+              <div className="mt-8 flex flex-col gap-4 justify-between h-full pb-8 px-2">
                 {/* Mobile Navigation */}
-                <MobileNavLink href="/services">Services</MobileNavLink>
-                <MobileNavLink href="/about">About</MobileNavLink>
-                <MobileNavLink href="/contact">Contact</MobileNavLink>
+                <div className="flex flex-col ">
+                  <MobileNavLink href="/services">Services</MobileNavLink>
+                  <MobileNavLink href="/about">About</MobileNavLink>
+                  <MobileNavLink href="/contact">Contact</MobileNavLink>
+                </div>
 
                 {/* Mobile Auth */}
                 <SignedOut>
