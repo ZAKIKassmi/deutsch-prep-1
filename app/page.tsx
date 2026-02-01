@@ -1,8 +1,8 @@
 import Footer from "@/components/Footer";
-import ContactSection from "@/components/home/ContactSection";
-import CtaSection from "@/components/home/CtaSection";
+import ContactSection from "@/components/home/contact-section";
+import CtaSection from "@/components/home/cta-section";
 import HeroSection from "@/components/home/hero-section";
-import ServiceSection from "@/components/home/ServiceSection";
+import ServiceSection from "@/components/home/service-section";
 import TestimonialSection from "@/components/home/testimonial-section";
 
 export default function HomePage() {
@@ -14,9 +14,10 @@ export default function HomePage() {
       <ServiceSection />
       {/* CTA Section */}
       <CtaSection />
+      {/* Testimonials */}
+      <TestimonialSection />
       {/* Contact Section */}
       <ContactSection />
-      <TestimonialSection />
       {/* Footer */}
       <Footer />
     </div>

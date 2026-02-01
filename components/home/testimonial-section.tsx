@@ -32,7 +32,7 @@ export default function TestimonialSection() {
   ];
 
   return (
-    <section className="w-full bg-linear-to-b from-white to-gray-50 py-16 sm:py-20 px-4">
+    <section className="w-full  py-16 sm:py-20 px-4 relative ">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-14 sm:mb-20">
