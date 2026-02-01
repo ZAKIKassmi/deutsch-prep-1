@@ -7,17 +7,6 @@ export default function HeroSection() {
     <section className="relative overflow-hidden">
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center py-16 sm:py-20 lg:py-28 xl:py-40">
-          {/* Badge */}
-          <Badge
-            variant="secondary"
-            className="mb-6 inline-flex items-center gap-2 border border-blue-200 bg-blue-50/80 px-4 py-2 text-blue-700 hover:bg-blue-100/80 backdrop-blur-sm transition-colors"
-          >
-            <Sparkles className="h-3.5 w-3.5" />
-            <span className="text-sm font-semibold">
-              Join 10,000+ Successful Learners
-            </span>
-          </Badge>
-
           {/* Main heading */}
           <h1 className="max-w-5xl text-center text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl">
             Start Your Journey in{" "}

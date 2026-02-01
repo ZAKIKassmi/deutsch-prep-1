@@ -24,7 +24,7 @@ export default function NavigationBar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-xl font-bold">DeutschPath</span>
+            <span className="text-xl font-bold">DeutschPrepa</span>
           </Link>
 
           {/* Desktop Navigation */}
