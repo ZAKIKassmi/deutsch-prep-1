@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import ContactSection from "@/components/home/ContactSection";
 import CtaSection from "@/components/home/CtaSection";
 import HeroSection from "@/components/home/HeroSection";
 import ServiceSection from "@/components/home/ServiceSection";
@@ -12,6 +13,8 @@ export default function HomePage() {
       <ServiceSection />
       {/* CTA Section */}
       <CtaSection />
+      {/* Contact Section */}
+      <ContactSection />
       {/* Footer */}
       <Footer />
     </div>
