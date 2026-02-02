@@ -113,7 +113,6 @@ export default function DocumentsHeroSection() {
                     <span className="absolute inset-0 translate-y-[101%] bg-white transition-transform duration-300 group-hover:translate-y-0" />
                     <span className="relative z-10 flex items-center group-hover:text-black transition-colors duration-300">
                       View Our Quality
-                      <Sparkles className="ml-2 h-4 w-4 text-rose-500" />
                     </span>
                   </Button>
                 </div>

@@ -1,4 +1,5 @@
 import DocumentsHeroSection from "@/components/services/documents/hero-section";
+import PricingSection from "@/components/services/documents/pricing-section";
 import ProcessSection from "@/components/services/documents/process-section";
 
 
@@ -9,6 +10,8 @@ export default function HomePage() {
       <DocumentsHeroSection />
         {/* Process Section */}
       <ProcessSection />
+        {/* Pricing Section */}
+        <PricingSection />
     </div>
   );
 }

@@ -29,7 +29,7 @@ export default function NavigationBar() {
 
           {/* Desktop Navigation */}
           <div className="hidden items-center gap-8 md:flex">
-            <NavLink href="/services">Services</NavLink>
+            <NavLink href="#services">Services</NavLink>
             <NavLink href="/about">About</NavLink>
             <NavLink href="/contact">Contact</NavLink>
           </div>

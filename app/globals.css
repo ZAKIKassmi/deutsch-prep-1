@@ -89,4 +89,12 @@
   body {
     @apply bg-background text-foreground antialiased;
   }
+  
+}
+html {
+  scroll-behavior: smooth;
+}
+#services {
+  /* This prevents the sticky navbar from covering the section title */
+  scroll-margin-top: 100px; 
 }
