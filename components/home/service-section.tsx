@@ -5,12 +5,14 @@ import {
   FileText, 
   Briefcase, 
   type LucideIcon, 
-  Sparkles 
+  Sparkles, 
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface ServiceItem {
   id: string;
+  route: string;
   step: string;
   title: string;
   description: string;
@@ -27,6 +29,7 @@ interface ServiceItem {
 const services: ServiceItem[] = [
   {
     id: "german",
+    route: "learn-german",
     step: "STEP 01",
     title: "Master the Language",
     description: "Your journey starts with communication. We help you reach the required levels to live and work confidently in Germany.",
@@ -46,6 +49,7 @@ const services: ServiceItem[] = [
   },
   {
     id: "docs",
+    route: "documents",
     step: "STEP 02",
     title: "Prepare Your Dossier",
     description: "We help you build a professional German application (Dossier) including your Lebenslauf, Motivation Letter, and Bac translations.",
@@ -65,6 +69,7 @@ const services: ServiceItem[] = [
   },
   {
     id: "jobs",
+     route: "ausbildung",
     step: "STEP 03",
     title: "Secure Your Ausbildung",
     description: "Finally, we connect you with top companies across all Germany to find the perfect vocational training for your career.",
@@ -167,13 +172,12 @@ export default function ServiceSection() {
                   ))}
                 </div>
 
-                {/* Action Button */}
-                <Button 
-                  className={`w-full h-12 rounded-xl text-white cursor-pointer font-bold tracking-wide bg-gradient-to-r ${service.gradient} shadow-lg ${service.shadowColor} hover:scale-[1.02] transition-all duration-300 group/btn border-0`}
-                >
-                  {service.cta}
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
+                <Link href={`/services/${service.route}`}>
+  <Button className={`w-full h-12 rounded-xl text-white cursor-pointer font-bold tracking-wide bg-gradient-to-r ${service.gradient} shadow-lg ${service.shadowColor} hover:scale-[1.02] transition-all duration-300 group/btn border-0`}>
+    {service.cta}
+    <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+  </Button>
+</Link>
 
               </div>
             </div>
