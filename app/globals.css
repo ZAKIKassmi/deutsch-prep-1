@@ -98,3 +98,17 @@ html {
   /* This prevents the sticky navbar from covering the section title */
   scroll-margin-top: 100px; 
 }
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite ease-in-out;
+}
+
+/* For that sharp architectural font feel */
+h1, h2 {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
