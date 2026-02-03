@@ -11,7 +11,11 @@ const institutions = [
   { name: "DSD", type: "Sprachdiplom" },
 ];
 
-const scrollingInstitutions = [...institutions, ...institutions, ...institutions];
+const scrollingInstitutions = [
+  ...institutions,
+  ...institutions,
+  ...institutions,
+];
 
 export default function ExamCentersSlider() {
   return (
@@ -68,7 +72,8 @@ export default function ExamCentersSlider() {
       {/* Simplified footer detail */}
       <div className="mt-8 flex justify-center px-6">
         <p className="text-[8px] font-bold text-slate-400 uppercase tracking-[0.2em]">
-          Aligned with <span className="text-slate-600">CEFR (GeR)</span> Levels A1—C1
+          Aligned with <span className="text-slate-600">CEFR (GeR)</span> Levels
+          A1—C1
         </p>
       </div>
     </section>

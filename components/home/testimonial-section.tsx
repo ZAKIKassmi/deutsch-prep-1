@@ -34,8 +34,11 @@ export default function TestimonialSection() {
   return (
     <section className="w-full py-24 sm:py-32 px-6 bg-white relative overflow-hidden">
       {/* Background Subtle Grid - Keeps it "Industrial" even on white */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-           style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 40L40 0L0 0L0 40ZM39 39L1 39L1 1L39 1L39 39Z'/%3E%3C/g%3E%3C/svg%3E")` }} 
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 40L40 0L0 0L0 40ZM39 39L1 39L1 1L39 1L39 39Z'/%3E%3C/g%3E%3C/svg%3E")`,
+        }}
       />
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -43,14 +46,23 @@ export default function TestimonialSection() {
         <div className="mb-20">
           <div className="flex items-center gap-2 mb-4">
             <div className="w-10 h-[2px] bg-red-600" />
-            <span className="text-red-600 font-black uppercase tracking-[0.3em] text-[10px]">Case Studies</span>
+            <span className="text-red-600 font-black uppercase tracking-[0.3em] text-[10px]">
+              Case Studies
+            </span>
           </div>
           <h2 className="text-5xl md:text-7xl font-black text-slate-950 uppercase tracking-tighter leading-[0.85] mb-6">
             Verified <br />
-            <span className="text-red-600 italic font-serif lowercase tracking-normal">Success</span> Stories.
+            <span className="text-red-600 italic font-serif lowercase tracking-normal">
+              Success
+            </span>{" "}
+            Stories.
           </h2>
           <p className="max-w-xl text-sm font-bold text-slate-500 uppercase tracking-widest leading-relaxed">
-            Over <span className="text-slate-900 border-b-2 border-red-600">1,000+ professionals</span> engineered their careers through our bureau.
+            Over{" "}
+            <span className="text-slate-900 border-b-2 border-red-600">
+              1,000+ professionals
+            </span>{" "}
+            engineered their careers through our bureau.
           </p>
         </div>
 
