@@ -135,14 +135,14 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Button
               size="lg"
-              className="h-16 px-12 bg-red-600 hover:bg-red-700 text-white font-black uppercase tracking-[0.2em] text-xs rounded-full transition-all hover:scale-105 shadow-xl shadow-red-900/20"
+              className="h-16 px-12 bg-red-600 hover:bg-red-700 text-white font-black uppercase tracking-[0.2em] text-xs rounded-full transition-all hover:scale-105  "
             >
               Start Your Journey
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button
               variant="ghost"
-              className="h-16 px-8 text-white/60 hover:text-white font-black uppercase tracking-widest text-xs"
+              className="h-16 px-8 text-white/60 hover:text-black hover:scale-105 font-black rounded-full uppercase tracking-widest text-xs"
             >
               View Our Methods
             </Button>

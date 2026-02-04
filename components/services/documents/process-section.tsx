@@ -55,7 +55,7 @@ const steps = [
     description:
       "Your dossier is ready. We connect you with top German companies for your Ausbildung.",
     image:
-      "https://images.unsplash.com/photo-1521791136064-7986c2923216?q=80&w=1469&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1557487307-2ca7e1c153d6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     features: ["100% Ready-to-Send", "Interview Ready", "Direct Referrals"],
     color: "from-emerald-500 to-teal-600",
   },

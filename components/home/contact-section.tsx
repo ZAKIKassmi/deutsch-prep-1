@@ -1,18 +1,42 @@
 "use client";
 
+import React, { useState, useRef, useEffect } from "react";
 import {
   Mail,
-  Phone,
   MapPin,
   Send,
-  MessageSquare,
-  Clock,
   Globe,
+  ChevronDown,
+  Check,
+  Phone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function ContactSection() {
+  // State for Custom Dropdown
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState("German Language Mastery");
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const services = [
+    "German Language Mastery",
+    "Dossier Engineering",
+    "Ausbildung Placement",
+    "Visa Documentation",
+  ];
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <section className="relative py-24 lg:py-32 bg-white overflow-hidden">
       {/* Subtle Map Background Pattern */}
@@ -22,6 +46,7 @@ export default function ContactSection() {
 
       <div className="container mx-auto px-6 relative z-10 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
           {/* LEFT SIDE: IDENTITY */}
           <div className="space-y-12">
             <motion.div
@@ -68,21 +93,9 @@ export default function ContactSection() {
               {/* WhatsApp Card */}
               <div className="p-6 rounded-[2rem] bg-slate-50 border border-slate-100 group hover:border-[#25D366]/20 transition-all duration-300">
                 <div className="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-4 group-hover:bg-[#25D366] group-hover:text-white transition-all">
-                  {/* WhatsApp SVG Icon */}
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="w-5 h-5 transition-transform group-hover:scale-110"
-                  >
-                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-11.7 8.38 8.38 0 0 1 3.8.9L21 3z" />
-                    <path d="M17.4 14.6l-1.3-1.3a1.4 1.4 0 0 0-2 0l-.3.3a.7.7 0 0 1-1 0l-1.7-1.7a.7.7 0 0 1 0-1l.3-.3a1.4 1.4 0 0 0 0-2l-1.3-1.3a1.4 1.4 0 0 0-2 0l-.5.5c-.8.8-1 2-.5 3a13.4 13.4 0 0 0 5.6 5.6c1 1 2.2.7 3-.1l.5-.5a1.4 1.4 0 0 0 0-2z" />
-                  </svg>
+                  <Phone className="w-5 h-5 transition-transform group-hover:scale-110" />
                 </div>
-                <h3 className="font-black text-slate-900 uppercase tracking-widest text-xs mb-1 text-[#25D366]">
+                <h3 className="font-black text-[#25D366] uppercase tracking-widest text-xs mb-1">
                   WhatsApp Live
                 </h3>
                 <a
@@ -119,11 +132,11 @@ export default function ContactSection() {
             viewport={{ once: true }}
             className="relative"
           >
-            {/* Architectural Shadow */}
             <div className="absolute -inset-4 bg-slate-100/50 rounded-[3rem] -z-10 blur-3xl" />
 
             <div className="bg-white rounded-[2.5rem] border border-slate-200 p-8 md:p-12 shadow-2xl shadow-slate-200/50">
               <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+                
                 <div className="grid md:grid-cols-2 gap-5">
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 ml-1">
@@ -147,15 +160,56 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                <div className="space-y-2">
+                {/* CUSTOM ENGINEERED DROPDOWN */}
+                <div className="relative space-y-2" ref={dropdownRef}>
                   <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 ml-1">
                     Service Selection
                   </label>
-                  <select className="w-full h-14 px-6 rounded-2xl bg-slate-50 border border-transparent focus:bg-white focus:border-red-600 focus:ring-0 transition-all outline-none appearance-none font-bold text-slate-900 text-sm">
-                    <option>German Language Mastery</option>
-                    <option>Dossier Engineering</option>
-                    <option>Ausbildung Placement</option>
-                  </select>
+                  
+                  <button
+                    type="button"
+                    onClick={() => setIsOpen(!isOpen)}
+                    className={`
+                      flex items-center justify-between
+                      w-full h-14 px-6 rounded-2xl transition-all duration-300
+                      font-bold text-sm outline-none border
+                      ${isOpen ? "bg-white border-red-600 shadow-lg shadow-red-600/5 text-slate-900" : "bg-slate-50 border-transparent text-slate-900"}
+                    `}
+                  >
+                    <span className="flex items-center gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-red-600" />
+                      {selectedService}
+                    </span>
+                    <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
+                  </button>
+
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10, scale: 0.98 }}
+                        animate={{ opacity: 1, y: 4, scale: 1 }}
+                        exit={{ opacity: 0, y: -10, scale: 0.98 }}
+                        className="absolute z-50 w-full bg-white border border-slate-200 rounded-2xl shadow-2xl shadow-slate-950/10 overflow-hidden p-2"
+                      >
+                        {services.map((service) => (
+                          <button
+                            key={service}
+                            type="button"
+                            onClick={() => {
+                              setSelectedService(service);
+                              setIsOpen(false);
+                            }}
+                            className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-left text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-red-600 transition-all group"
+                          >
+                            {service}
+                            {selectedService === service && (
+                              <Check className="w-4 h-4 text-red-600" />
+                            )}
+                          </button>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
 
                 <div className="space-y-2">
@@ -169,7 +223,7 @@ export default function ContactSection() {
                   />
                 </div>
 
-                <Button className="group relative w-full h-16 rounded-2xl bg-red-600 hover:bg-black text-white font-black uppercase tracking-[0.2em] text-[10px] transition-all duration-300 overflow-hidden">
+                <Button className="group relative w-full h-16 rounded-2xl bg-red-600 hover:bg-black text-white font-black uppercase tracking-[0.2em] text-[10px] transition-all duration-300 overflow-hidden shadow-lg shadow-red-600/20">
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     Initiate Contact
                     <Send className="w-3 h-3 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
